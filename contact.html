@@ -182,7 +182,7 @@
           Feel free to reach out — I'd love to connect.
         </p>
 
-        <form class="contact-page-form" action="https://formspree.io/f/mrerlqrr" method="POST">
+        <form id="contact-form" class="contact-page-form" action="https://formspree.io/f/mrerlqrr" method="POST">
           <div class="form-name-row">
             <div class="form-group">
               <label for="first-name">First Name</label>
@@ -202,6 +202,7 @@
             <textarea id="message" name="message" required placeholder="Your message..."></textarea>
           </div>
           <button type="submit" class="send-btn">Send</button>
+          <p id="form-status" style="margin-top:12px; font-family:'PT Serif', Georgia, serif; color:#6B5B47;"></p>
         </form>
       </div>
 
@@ -241,9 +242,37 @@
   </footer>
 
   <script>
-    const toggle = document.getElementById('navToggle');
-    const links = document.getElementById('navLinks');
-    toggle.addEventListener('click', () => links.classList.toggle('open'));
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: {
+          Accept: 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        status.textContent = 'Message sent successfully!';
+        form.reset();
+      } else {
+        status.textContent = 'Something went wrong. Please try again.';
+      }
+    } catch (error) {
+      status.textContent = 'Network error. Please try again later.';
+    }
+  });
   </script>
 
 </body>
