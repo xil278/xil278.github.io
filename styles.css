@@ -45,8 +45,9 @@ nav {
   background: rgba(240, 235, 225, 0.96);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid #DDD5C5;
-  padding: 0 48px;
+  padding: 0 40px;
   height: 100px;
+  overflow: visible;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,10 +55,16 @@ nav {
 
 .nav-logo {
   font-family: 'Bitter', Georgia, serif;
-  font-size: 15px;
+  font-size: 1.3rem;
   font-weight: 600;
   letter-spacing: 0.02em;
   color: #2C2416;
+  overflow: visible;
+}
+
+.nav-logo img {
+  height: 80px;
+  overflow: visible;
 }
 
 .nav-links {
