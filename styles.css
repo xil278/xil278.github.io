@@ -376,7 +376,7 @@ nav {
 
 .accordion-title {
   font-family: 'Libre Baskerville', Georgia, serif;
-  font-size: 17px;
+  font-size: 1.4rem;
   font-weight: 700;
   color: #2C2416;
 }
@@ -426,7 +426,7 @@ nav {
 }
 
 .resume-item-left .location {
-  font-family: 'Bitter', Georgia, serif;
+  font-family: 'PT Serif', Georgia, serif;
   font-size: 13px;
   color: #A89880;
   margin-bottom: 10px;
@@ -438,7 +438,7 @@ nav {
 }
 
 .resume-item-right .date {
-  font-family: 'Bitter', Georgia, serif;
+  font-family: 'PT Serif', Georgia, serif;
   font-size: 13px;
   color: #A89880;
 }
