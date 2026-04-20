@@ -10,11 +10,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
   <style>
     .contact-page-grid {
-      max-width: 1100px;
-      margin: 0 auto;
+      width: 100%;
       padding: 100px 48px 120px;
+      box-sizing: border-box;
       display: grid;
-      grid-template-columns: 1fr 400px;
+      grid-template-columns: 1fr 1fr;
       gap: 80px;
       align-items: start;
     }
@@ -123,9 +123,7 @@
 
     .contact-page-right img {
       width: 100%;
-      aspect-ratio: 3 / 4;
-      object-fit: cover;
-      object-position: center top;
+      height: auto;
       border-radius: 16px;
       display: block;
     }
