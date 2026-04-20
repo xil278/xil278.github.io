@@ -14,12 +14,16 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: #2C2416;
-  background-color: #F5F0E8;
+  background-color: #F0EBE1;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Young Serif', Georgia, serif;
+  font-family: 'Libre Baskerville', Georgia, serif;
 }
+
+h1 { font-size: 4rem; }
+h2 { font-size: 2.8rem; }
+h3 { font-size: 2.2rem; }
 
 a {
   color: inherit;
@@ -38,7 +42,7 @@ nav {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(245, 240, 232, 0.96);
+  background: rgba(240, 235, 225, 0.96);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid #DDD5C5;
   padding: 0 48px;
@@ -118,7 +122,7 @@ nav {
 }
 
 .about-text h1 {
-  font-size: clamp(32px, 4vw, 52px);
+  font-size: 4rem;
   font-weight: 400;
   line-height: 1.15;
   letter-spacing: -0.01em;
@@ -293,7 +297,7 @@ nav {
 }
 
 .resume-header h1 {
-  font-size: 36px;
+  font-size: 4rem;
   font-weight: 400;
   letter-spacing: -0.01em;
   color: #2C2416;
@@ -371,12 +375,10 @@ nav {
 }
 
 .accordion-title {
-  font-family: 'Bitter', Georgia, serif;
-  font-size: 11px;
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 17px;
   font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #8C7B6A;
+  color: #2C2416;
 }
 
 .accordion-arrow {
@@ -409,7 +411,7 @@ nav {
 }
 
 .resume-item-left h3 {
-  font-family: 'Young Serif', Georgia, serif;
+  font-family: 'Libre Baskerville', Georgia, serif;
   font-size: 16px;
   font-weight: 400;
   color: #2C2416;
@@ -477,7 +479,7 @@ nav {
 }
 
 .contact-header h1 {
-  font-size: clamp(36px, 5vw, 60px);
+  font-size: 4rem;
   font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.1;
@@ -705,7 +707,7 @@ footer {
 }
 
 .footer-col-name {
-  font-family: 'Young Serif', Georgia, serif;
+  font-family: 'Libre Baskerville', Georgia, serif;
   font-size: 17px;
   font-weight: 700;
   color: #F5F0E8;
@@ -822,7 +824,7 @@ footer {
     top: 64px;
     left: 0;
     right: 0;
-    background: #F5F0E8;
+    background: #F0EBE1;
     border-bottom: 1px solid #DDD5C5;
     padding: 24px;
     gap: 20px;
