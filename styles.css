@@ -691,12 +691,76 @@ nav {
 
 /* ===== Footer ===== */
 footer {
-  font-family: 'Bitter', Georgia, serif;
-  text-align: center;
-  padding: 40px 48px;
-  border-top: 1px solid #DDD5C5;
+  background: #2C2416;
+  color: #F5F0E8;
+  padding: 56px 48px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-col-name {
+  font-family: 'Young Serif', Georgia, serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #F5F0E8;
+  margin-bottom: 8px;
+}
+
+.footer-col-sub {
+  font-family: 'PT Serif', Georgia, serif;
   font-size: 13px;
-  color: #A89880;
+  color: #C4B9A8;
+  line-height: 1.6;
+}
+
+.footer-col-label {
+  font-family: 'Bitter', Georgia, serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8C7B6A;
+  margin-bottom: 12px;
+}
+
+.footer-col-value {
+  font-family: 'PT Serif', Georgia, serif;
+  font-size: 13px;
+  color: #C4B9A8;
+  line-height: 1.8;
+}
+
+.footer-col-value a {
+  color: #C4B9A8;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-col-value a:hover {
+  color: #F5F0E8;
+}
+
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 500px) {
+  footer {
+    padding: 40px 24px;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
 }
 
 /* ===== Responsive ===== */
