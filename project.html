@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Xinyi Liu</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    @keyframes pageFadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    body {
+      opacity: 0;
+      animation: pageFadeIn 0.6s ease forwards;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Full-screen background */
+    .project-bg {
+      position: fixed;
+      inset: 0;
+      background-image: url('portfolio pic/Background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #1a1410; /* fallback while image loads */
+      z-index: 0;
+    }
+
+    .project-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(18, 12, 6, 0.62);
+    }
+
+    /* Nav overrides for dark background */
+    nav {
+      position: fixed;
+      z-index: 100;
+      background: rgba(18, 12, 6, 0.45);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 245, 230, 0.12);
+    }
+
+    nav .nav-logo,
+    .nav-links a {
+      color: #F5EFE4;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #fff;
+      border-bottom-color: #fff;
+    }
+
+    .nav-toggle {
+      color: #F5EFE4;
+    }
+
+    /* Main layout */
+    .project-main {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 140px 48px 80px;
+    }
+
+    /* Project list */
+    .project-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .project-list li {
+      line-height: 1.15;
+      margin-bottom: 0.15em;
+    }
+
+    .project-list li:not(:last-child)::after {
+      content: ' •';
+      font-family: 'Libre Baskerville', Georgia, serif;
+      color: rgba(245, 239, 228, 0.55);
+      font-size: 0.6em;
+      vertical-align: middle;
+    }
+
+    .project-link {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: clamp(36px, 5.5vw, 68px);
+      font-weight: 400;
+      font-style: italic;
+      color: #F5EFE4;
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      display: inline-block;
+      padding: 12px 0;
+      border-bottom: 1px solid transparent;
+      transition: color 0.25s, border-color 0.25s;
+    }
+
+    .project-link:hover {
+      color: #fff;
+      border-bottom-color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Footer overrides for dark page */
+    footer {
+      position: relative;
+      z-index: 1;
+      background: rgba(18, 12, 6, 0.72);
+      border-top: 1px solid rgba(255, 245, 230, 0.1);
+    }
+
+    .footer-col-name,
+    .footer-col-sub,
+    .footer-col-label,
+    .footer-col-value,
+    .footer-col-value a {
+      color: rgba(245, 239, 228, 0.65);
+    }
+
+    .footer-col-value a:hover {
+      color: #F5EFE4;
+    }
+
+    @media (max-width: 900px) {
+      .project-main {
+        padding: 120px 32px 60px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .project-main {
+        padding: 110px 24px 48px;
+        align-items: flex-start;
+        padding-top: 130px;
+      }
+
+      .nav-links.open {
+        background: rgba(18, 12, 6, 0.92);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="project-bg"></div>
+
+  <nav>
+    <a href="about.html" class="nav-logo"><img src="Logo.png" alt="Xinyi Liu" style="height:80px;width:auto;display:block;" /></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="about.html">About</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="project.html" class="active">Project</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">Menu</button>
+  </nav>
+
+  <main class="project-main">
+    <ul class="project-list">
+      <li>
+        <a href="project-behavioral.html" class="project-link">Behavioral Attention Analytics</a>
+      </li>
+      <li>
+        <a href="project-xiushan.html" class="project-link">Xiushan Flower Lantern Research Project</a>
+      </li>
+      <li>
+        <a href="project-elderly.html" class="project-link">Intergenerational Care &amp; Elderly Well-being Research Project</a>
+      </li>
+    </ul>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <p class="footer-col-name">Xinyi(Berenic) Liu</p>
+        <p class="footer-col-sub">Exploring Design, HCI, AI, and Human Behavior</p>
+      </div>
+      <div>
+        <p class="footer-col-label">Location</p>
+        <p class="footer-col-value">9450 Gilman Dr, La Jolla<br/>CA, United States</p>
+      </div>
+      <div>
+        <p class="footer-col-label">Contact</p>
+        <p class="footer-col-value">
+          <a href="mailto:xinyi0765@gmail.com">xinyi0765@gmail.com</a><br/>
+          <a href="mailto:xil278@ucsd.edu">xil278@ucsd.edu</a><br/>
+          858-402-6254
+        </p>
+      </div>
+      <div>
+        <p class="footer-col-label">Connect</p>
+        <p class="footer-col-value">
+          <a href="https://www.linkedin.com/in/xinyi-liu-228059387" target="_blank" rel="noopener">www.linkedin.com/in/xinyi-liu-228059387</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
+  </script>
+
+</body>
+</html>
