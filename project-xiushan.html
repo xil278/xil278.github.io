@@ -656,6 +656,76 @@
       }
     }
 
+    /* ── Auto Gallery Section ── */
+    @keyframes autoScroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .auto-gallery-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 48px 100px;
+      border-top: 1px solid #DDD5C5;
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .auto-gallery-label {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #A89880;
+      padding-top: 6px;
+    }
+
+    .auto-gallery-viewport {
+      overflow: hidden;
+    }
+
+    .auto-gallery-track {
+      display: flex;
+      gap: 16px;
+      width: max-content;
+      animation: autoScroll 40s linear infinite;
+    }
+
+    .auto-gallery-viewport:hover .auto-gallery-track {
+      animation-play-state: paused;
+    }
+
+    .auto-gallery-img {
+      height: 280px;
+      width: auto;
+      flex-shrink: 0;
+      border-radius: 8px;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      user-select: none;
+    }
+
+    .auto-gallery-img:hover {
+      transform: scale(1.03);
+    }
+
+    @media (max-width: 900px) {
+      .auto-gallery-section {
+        grid-template-columns: 1fr;
+        padding: 60px 24px 80px;
+        gap: 24px;
+      }
+
+      .auto-gallery-img {
+        height: 200px;
+      }
+    }
+
     /* ── Problem Section ── */
     .problem-section {
       max-width: 1100px;
@@ -1042,6 +1112,40 @@
       </div>
     </section>
 
+    <section class="auto-gallery-section">
+      <p class="auto-gallery-label">Gallery</p>
+      <div class="auto-gallery-viewport">
+        <div class="auto-gallery-track">
+          <!-- Original set -->
+          <img src="Fieldwork.jpg"                   class="auto-gallery-img" alt="Field work" />
+          <img src="Interview.JPG"                   class="auto-gallery-img" alt="Interview" />
+          <img src="CTB%20Photo.JPG"                 class="auto-gallery-img" alt="CTB Photo" />
+          <img src="CTB%20Interview.JPG"             class="auto-gallery-img" alt="CTB Interview" />
+          <img src="Award.JPG"                       class="auto-gallery-img" alt="Award" />
+          <img src="Collaboration.JPG"               class="auto-gallery-img" alt="Collaboration" />
+          <img src="Collaboration%201.JPG"           class="auto-gallery-img" alt="Collaboration" />
+          <img src="Fieldwork2.jpg"                  class="auto-gallery-img" alt="Field work 2" />
+          <img src="School.JPG"                      class="auto-gallery-img" alt="School" />
+          <img src="School1.JPG"                     class="auto-gallery-img" alt="School" />
+          <img src="promotional%20video.png"         class="auto-gallery-img" alt="Promotional video" />
+          <img src="School%20post.png"               class="auto-gallery-img" alt="School post" />
+          <!-- Duplicate set for seamless loop -->
+          <img src="Fieldwork.jpg"                   class="auto-gallery-img" alt="Field work" aria-hidden="true" />
+          <img src="Interview.JPG"                   class="auto-gallery-img" alt="Interview" aria-hidden="true" />
+          <img src="CTB%20Photo.JPG"                 class="auto-gallery-img" alt="CTB Photo" aria-hidden="true" />
+          <img src="CTB%20Interview.JPG"             class="auto-gallery-img" alt="CTB Interview" aria-hidden="true" />
+          <img src="Award.JPG"                       class="auto-gallery-img" alt="Award" aria-hidden="true" />
+          <img src="Collaboration.JPG"               class="auto-gallery-img" alt="Collaboration" aria-hidden="true" />
+          <img src="Collaboration%201.JPG"           class="auto-gallery-img" alt="Collaboration" aria-hidden="true" />
+          <img src="Fieldwork2.jpg"                  class="auto-gallery-img" alt="Field work 2" aria-hidden="true" />
+          <img src="School.JPG"                      class="auto-gallery-img" alt="School" aria-hidden="true" />
+          <img src="School1.JPG"                     class="auto-gallery-img" alt="School" aria-hidden="true" />
+          <img src="promotional%20video.png"         class="auto-gallery-img" alt="Promotional video" aria-hidden="true" />
+          <img src="School%20post.png"               class="auto-gallery-img" alt="School post" aria-hidden="true" />
+        </div>
+      </div>
+    </section>
+
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
       <button class="lightbox-close" id="lightboxClose">&times;</button>
@@ -1118,6 +1222,15 @@
 
     document.querySelectorAll('.carousel-img').forEach(img => {
       img.addEventListener('dblclick', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('active');
+      });
+    });
+
+    // Auto gallery — single click lightbox (originals only, not aria-hidden duplicates)
+    document.querySelectorAll('.auto-gallery-img:not([aria-hidden])').forEach(img => {
+      img.addEventListener('click', () => {
         lightboxImg.src = img.src;
         lightboxImg.alt = img.alt;
         lightbox.classList.add('active');
