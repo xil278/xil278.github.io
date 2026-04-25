@@ -36,6 +36,13 @@
       transform: translateY(0);
     }
 
+    /* ── Unified background wrapper ── */
+    .unified-bg {
+      position: relative;
+      background: #F6F3EC;
+      overflow: hidden;
+    }
+
     /* ── Hero ── */
     .hero-section {
       position: relative;
@@ -45,8 +52,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background-color: #F6F3EC;
-      overflow: hidden;
+      background: transparent;
+      z-index: 1;
     }
 
     /* Floating bubbles */
@@ -152,7 +159,9 @@
 
     /* ── About section ── */
     .about-hero {
-      background: rgba(240, 235, 225, 0.96);
+      background: transparent;
+      position: relative;
+      z-index: 1;
       display: grid;
       grid-template-columns: 1fr 380px;
       gap: 80px;
@@ -206,11 +215,11 @@
     }
 
     .hero-statement {
-      background: #F6F3EC;
+      background: transparent;
       padding: 120px 48px;
       text-align: center;
       position: relative;
-      overflow: hidden;
+      z-index: 1;
     }
 
     .hero-title {
@@ -709,8 +718,7 @@
 
   <main class="page">
 
-    <!-- First screen: Hero -->
-    <section class="hero-section">
+    <div class="unified-bg">
       <span class="floaty floaty-1">🐻</span>
       <span class="floaty floaty-2">🎀</span>
       <span class="floaty floaty-3">🐻</span>
@@ -727,6 +735,8 @@
       <span class="floaty floaty-14">🎀</span>
       <span class="floaty floaty-15">🐻</span>
 
+    <!-- First screen: Hero -->
+    <section class="hero-section">
       <div class="hero-content">
         <h1>Welcome to Berenic's Website</h1>
         <p>I study and learn design, HCI, and AI. Happy to see you here!</p>
@@ -760,22 +770,7 @@
     </section>
 
     <section class="hero-statement reveal" id="heroStatement">
-      <span class="floaty floaty-1">🐻</span>
-      <span class="floaty floaty-2">🎀</span>
-      <span class="floaty floaty-3">🐻</span>
-      <span class="floaty floaty-4">🎀</span>
-      <span class="floaty floaty-5">🐻</span>
-      <span class="floaty floaty-6">🎀</span>
-      <span class="floaty floaty-7">🐻</span>
-      <span class="floaty floaty-8">🎀</span>
-      <span class="floaty floaty-9">🐻</span>
-      <span class="floaty floaty-10">🎀</span>
-      <span class="floaty floaty-11">🐻</span>
-      <span class="floaty floaty-12">🎀</span>
-      <span class="floaty floaty-13">🐻</span>
-      <span class="floaty floaty-14">🎀</span>
-      <span class="floaty floaty-15">🐻</span>
-      <h2 class="hero-title" style="position:relative;z-index:1;">
+      <h2 class="hero-title">
         Let's Make an
         <span class="impact-wrap">Impact
           <svg class="impact-circle" viewBox="0 0 210 82" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -785,13 +780,14 @@
         </span>
         For This World
       </h2>
-      <p class="hero-subtitle" style="position:relative;z-index:1;">I believe design can change how we see the world — and I want to create experiences that actually matter</p>
-      <div class="about-nav-buttons" style="position:relative;z-index:1;">
+      <p class="hero-subtitle">I believe design can change how we see the world — and I want to create experiences that actually matter</p>
+      <div class="about-nav-buttons">
         <a href="#resumeSection" class="about-nav-btn">Resume</a>
         <a href="#projectSection" class="about-nav-btn">Project</a>
         <a href="contact.html" class="about-nav-btn">Contact Me</a>
       </div>
     </section>
+    </div><!-- end .unified-bg -->
 
     <section class="resume-section reveal" id="resumeSection">
       <div class="resume-section-header">
