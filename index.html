@@ -14,7 +14,7 @@
       to   { opacity: 1; }
     }
 
-    html {
+    html, body {
       scroll-behavior: smooth;
     }
 
@@ -22,6 +22,17 @@
       opacity: 0;
       animation: pageFadeIn 0.6s ease forwards;
       background-color: #F6F3EC;
+    }
+
+    /* ── Reveal on scroll ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* ── Hero ── */
@@ -53,59 +64,53 @@
       50%       { transform: translate(25px, 35px) scale(1.06); }
     }
 
-    .bubble {
+    .floaty {
       position: absolute;
-      border-radius: 50%;
       pointer-events: none;
+      line-height: 1;
+      user-select: none;
     }
 
-    .bubble-1 {
-      width: 340px; height: 340px;
-      background: #C4A882;
-      opacity: 0.17;
-      top: -100px; left: -80px;
+    .floaty-1 {
+      font-size: 80px;
+      opacity: 0.22;
+      top: -10px; left: -10px;
       animation: float1 10s ease-in-out infinite;
     }
-    .bubble-2 {
-      width: 220px; height: 220px;
-      background: #8a7060;
-      opacity: 0.14;
-      top: 8%; right: 4%;
+    .floaty-2 {
+      font-size: 52px;
+      opacity: 0.20;
+      top: 10%; right: 5%;
       animation: float2 13s ease-in-out infinite;
     }
-    .bubble-3 {
-      width: 280px; height: 280px;
-      background: #C4A882;
-      opacity: 0.15;
-      bottom: 2%; left: 12%;
+    .floaty-3 {
+      font-size: 64px;
+      opacity: 0.18;
+      bottom: 6%; left: 10%;
       animation: float3 11s ease-in-out infinite;
     }
-    .bubble-4 {
-      width: 160px; height: 160px;
-      background: #A89880;
-      opacity: 0.18;
-      bottom: 18%; right: 6%;
+    .floaty-4 {
+      font-size: 44px;
+      opacity: 0.22;
+      bottom: 18%; right: 7%;
       animation: float1 15s ease-in-out infinite reverse;
     }
-    .bubble-5 {
-      width: 110px; height: 110px;
-      background: #4A3C2C;
-      opacity: 0.08;
-      top: 38%; left: 4%;
+    .floaty-5 {
+      font-size: 32px;
+      opacity: 0.16;
+      top: 40%; left: 5%;
       animation: float2 9s ease-in-out infinite;
     }
-    .bubble-6 {
-      width: 90px; height: 90px;
-      background: #C4A882;
-      opacity: 0.12;
-      top: 22%; right: 22%;
+    .floaty-6 {
+      font-size: 28px;
+      opacity: 0.18;
+      top: 20%; right: 20%;
       animation: float3 8s ease-in-out infinite 2s;
     }
-    .bubble-7 {
-      width: 60px; height: 60px;
-      background: #8a7060;
-      opacity: 0.13;
-      top: 60%; left: 38%;
+    .floaty-7 {
+      font-size: 22px;
+      opacity: 0.15;
+      top: 62%; left: 40%;
       animation: float1 12s ease-in-out infinite 4s;
     }
 
@@ -354,13 +359,13 @@
 
     <!-- First screen: Hero -->
     <section class="hero-section">
-      <div class="bubble bubble-1"></div>
-      <div class="bubble bubble-2"></div>
-      <div class="bubble bubble-3"></div>
-      <div class="bubble bubble-4"></div>
-      <div class="bubble bubble-5"></div>
-      <div class="bubble bubble-6"></div>
-      <div class="bubble bubble-7"></div>
+      <span class="floaty floaty-1">🐻</span>
+      <span class="floaty floaty-2">🎀</span>
+      <span class="floaty floaty-3">🐻</span>
+      <span class="floaty floaty-4">🎀</span>
+      <span class="floaty floaty-5">🐻</span>
+      <span class="floaty floaty-6">🎀</span>
+      <span class="floaty floaty-7">🐻</span>
 
       <div class="hero-content">
         <h1>Welcome to Berenic's Website</h1>
@@ -374,7 +379,7 @@
     </section>
 
     <!-- About content -->
-    <section class="about-hero" id="aboutSection">
+    <section class="about-hero reveal" id="aboutSection">
       <div class="about-text">
         <h1>Hi, this is Xinyi(Berenic) Liu</h1>
         <p class="tagline">Designing Human-AI experiences for Creativity and Collaboration</p>
@@ -394,7 +399,7 @@
       </div>
     </section>
 
-    <section class="hero-statement" id="heroStatement">
+    <section class="hero-statement reveal" id="heroStatement">
       <h2 class="hero-title">
         Let's Make an
         <span class="impact-wrap">Impact
@@ -415,7 +420,7 @@
 
   </main>
 
-  <footer>
+  <footer class="reveal">
     <div class="footer-grid">
       <div>
         <p class="footer-col-name">Xinyi(Berenic) Liu</p>
@@ -442,21 +447,45 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
   <script>
+    // Nav toggle
     const toggle = document.getElementById('navToggle');
     const links = document.getElementById('navLinks');
     toggle.addEventListener('click', () => links.classList.toggle('open'));
 
-    const heroStatement = document.getElementById('heroStatement');
-    const observer = new IntersectionObserver((entries) => {
+    // Lenis smooth scroll
+    const lenis = new Lenis({
+      duration: 1.3,
+      easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+    });
+
+    (function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    })(0);
+
+    // Anchor link uses Lenis instead of native jump
+    document.querySelector('.scroll-down').addEventListener('click', e => {
+      e.preventDefault();
+      lenis.scrollTo('#aboutSection', { offset: 0 });
+    });
+
+    // Reveal on scroll + impact circle trigger
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          heroStatement.classList.add('in-view');
-          observer.unobserve(heroStatement);
+          entry.target.classList.add('visible');
+          if (entry.target.id === 'heroStatement') {
+            entry.target.classList.add('in-view');
+          }
+          revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.2 });
-    observer.observe(heroStatement);
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
   </script>
 
 </body>
