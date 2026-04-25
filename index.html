@@ -450,6 +450,200 @@
       white-space: nowrap;
     }
 
+    /* ── Project Section ── */
+    .project-section {
+      background: #f5f0eb;
+      padding: 80px 48px 100px;
+      border-top: 1px solid #DDD5C5;
+    }
+
+    .project-section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .project-section-header h2 {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      color: #2C2416;
+      margin-bottom: 20px;
+    }
+
+    .project-all-link {
+      display: inline-block;
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #8a6f5e;
+      text-decoration: none;
+      border: 1.5px solid #C4B9A8;
+      border-radius: 100px;
+      padding: 11px 26px;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+
+    .project-all-link:hover {
+      background: #2C2416;
+      color: #F5F0E8;
+      border-color: #2C2416;
+    }
+
+    .project-section .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .project-section .card-wrapper {
+      perspective: 1200px;
+      height: 440px;
+      cursor: pointer;
+      display: block;
+      text-decoration: none;
+    }
+
+    .project-section .card-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 18px;
+    }
+
+    .project-section .card-wrapper:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .project-section .card-front,
+    .project-section .card-back {
+      position: absolute;
+      inset: 0;
+      border-radius: 18px;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      overflow: hidden;
+    }
+
+    .project-section .card-front {
+      background-image: url('Background.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .project-section .card-front::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(20,12,6,0.28) 0%, rgba(20,12,6,0.72) 100%);
+    }
+
+    .project-section .card-badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 1;
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 6px;
+      padding: 5px 11px;
+      backdrop-filter: blur(4px);
+    }
+
+    .project-section .card-front-title {
+      position: absolute;
+      bottom: 28px;
+      left: 24px;
+      right: 24px;
+      z-index: 1;
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: clamp(17px, 1.6vw, 21px);
+      font-weight: 400;
+      font-style: italic;
+      color: #fff;
+      line-height: 1.35;
+    }
+
+    .project-section .card-front-hint {
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      z-index: 1;
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .project-section .card-back {
+      transform: rotateY(180deg);
+      background: #fff;
+      border: 1px solid rgba(196,185,168,0.4);
+      box-shadow: 0 4px 24px rgba(44,36,22,0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px;
+    }
+
+    .project-section .card-back-eyebrow {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #A89880;
+      margin-bottom: 12px;
+    }
+
+    .project-section .card-back-title {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: #2C2416;
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+
+    .project-section .card-back-desc {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 13.5px;
+      color: #6B5B47;
+      line-height: 1.75;
+    }
+
+    .project-section .card-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 20px;
+    }
+
+    .project-section .card-pill {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #8a6f5e;
+      background: #F6F3EC;
+      border: 1px solid #DDD5C5;
+      border-radius: 100px;
+      padding: 4px 12px;
+    }
+
     /* Responsive */
     @media (max-width: 900px) {
       .hero-statement {
@@ -463,6 +657,22 @@
       .photo-card {
         max-width: 320px;
         margin: 0 auto;
+      }
+      .project-section {
+        padding: 60px 24px 80px;
+      }
+      .project-section .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .project-section .card-wrapper {
+        height: 400px;
+      }
+    }
+
+    @media (min-width: 601px) and (max-width: 900px) {
+      .project-section .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
@@ -489,7 +699,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#aboutSection">About</a></li>
       <li><a href="#resumeSection">Resume</a></li>
-      <li><a href="project.html">Project</a></li>
+      <li><a href="#projectSection">Project</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">Menu</button>
@@ -561,7 +771,7 @@
       <p class="hero-subtitle">I believe design can change how we see the world — and I want to create experiences that actually matter</p>
       <div class="about-nav-buttons">
         <a href="#resumeSection" class="about-nav-btn">Resume</a>
-        <a href="project.html" class="about-nav-btn">Project</a>
+        <a href="#projectSection" class="about-nav-btn">Project</a>
         <a href="contact.html" class="about-nav-btn">Contact Me</a>
       </div>
     </section>
@@ -860,6 +1070,84 @@
             </div>
           </div>
         </details>
+
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="project-section reveal" id="projectSection">
+      <div class="project-section-header">
+        <h2>Projects</h2>
+        <a href="project.html" class="project-all-link">View All Projects →</a>
+      </div>
+
+      <div class="cards-grid">
+
+        <a class="card-wrapper" href="project-behavioral.html">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="card-badge">📁 Research</span>
+              <p class="card-front-title">Behavioral Attention Analytics</p>
+              <span class="card-front-hint">hover to explore →</span>
+            </div>
+            <div class="card-back">
+              <div>
+                <p class="card-back-eyebrow">📁 Research · In Progress</p>
+                <p class="card-back-title">Behavioral Attention Analytics</p>
+                <p class="card-back-desc">Explores how cognitive load and attentional residue impact focus and productivity. Designing a system that tracks user behavior and delivers targeted interventions.</p>
+              </div>
+              <div class="card-pills">
+                <span class="card-pill">UX Research</span>
+                <span class="card-pill">Cognitive Science</span>
+                <span class="card-pill">HCI</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a class="card-wrapper" href="project-xiushan.html">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="card-badge">📁 Research</span>
+              <p class="card-front-title">Xiushan Flower Lantern Research Project</p>
+              <span class="card-front-hint">hover to explore →</span>
+            </div>
+            <div class="card-back">
+              <div>
+                <p class="card-back-eyebrow">📁 Research · 2023–2024</p>
+                <p class="card-back-title">Xiushan Flower Lantern Research Project</p>
+                <p class="card-back-desc">Revitalizing a national intangible cultural heritage through design, digital media, and AR. Led a team of researchers — top 5% paper, National Gold Prize, Harvard Global Finals.</p>
+              </div>
+              <div class="card-pills">
+                <span class="card-pill">Cultural Heritage</span>
+                <span class="card-pill">Design Research</span>
+                <span class="card-pill">AR</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a class="card-wrapper" href="project-elderly.html">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="card-badge">📁 Research</span>
+              <p class="card-front-title">Intergenerational Care &amp; Elderly Well-being Research Project</p>
+              <span class="card-front-hint">hover to explore →</span>
+            </div>
+            <div class="card-back">
+              <div>
+                <p class="card-back-eyebrow">📁 Research · 2022–2023</p>
+                <p class="card-back-title">Intergenerational Care &amp; Elderly Well-being</p>
+                <p class="card-back-desc">Investigating skip-generation child-rearing impacts on elderly health in urban China through mixed-methods research, with intervention design including a content platform and mini program.</p>
+              </div>
+              <div class="card-pills">
+                <span class="card-pill">Social Research</span>
+                <span class="card-pill">UX Design</span>
+                <span class="card-pill">Community Care</span>
+              </div>
+            </div>
+          </div>
+        </a>
 
       </div>
     </section>
