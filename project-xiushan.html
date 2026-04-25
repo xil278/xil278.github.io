@@ -409,6 +409,92 @@
       }
     }
 
+    /* ── Outcome Section ── */
+    .outcome-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 48px 100px;
+      border-top: 1px solid #DDD5C5;
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .outcome-label {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #A89880;
+      padding-top: 6px;
+    }
+
+    .outcome-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+      margin-bottom: 40px;
+      border: 1px solid #DDD5C5;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .outcome-stat {
+      padding: 28px 24px;
+      border-right: 1px solid #DDD5C5;
+    }
+
+    .outcome-stat:last-child {
+      border-right: none;
+    }
+
+    .outcome-stat-number {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: #C4A882;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .outcome-stat-label {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 13px;
+      color: #8C7B6A;
+      line-height: 1.5;
+    }
+
+    .outcome-body {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 15px;
+      color: #6B5B47;
+      line-height: 1.85;
+      max-width: 580px;
+    }
+
+    @media (max-width: 900px) {
+      .outcome-section {
+        grid-template-columns: 1fr;
+        padding: 60px 24px 80px;
+        gap: 24px;
+      }
+
+      .outcome-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .outcome-stat {
+        border-right: none;
+        border-bottom: 1px solid #DDD5C5;
+      }
+
+      .outcome-stat:last-child {
+        border-bottom: none;
+      }
+    }
+
     /* ── Problem Section ── */
     .problem-section {
       max-width: 1100px;
@@ -711,6 +797,27 @@
             <p class="solution-item-body">A step-by-step AR guide that lets users learn and build a flower lantern through their phone — making craftsmanship interactive and accessible.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="outcome-section">
+      <p class="outcome-label">Outcome</p>
+      <div class="outcome-right">
+        <div class="outcome-stats">
+          <div class="outcome-stat">
+            <p class="outcome-stat-number">1,000+</p>
+            <p class="outcome-stat-label">survey participants</p>
+          </div>
+          <div class="outcome-stat">
+            <p class="outcome-stat-number">Thousands</p>
+            <p class="outcome-stat-label">of views on digital content</p>
+          </div>
+          <div class="outcome-stat">
+            <p class="outcome-stat-number">Strong</p>
+            <p class="outcome-stat-label">willingness to participate in lantern-making</p>
+          </div>
+        </div>
+        <p class="outcome-body">Across platforms, the project demonstrated that when cultural heritage is made accessible and interactive, people want to engage with it.</p>
       </div>
     </section>
 
