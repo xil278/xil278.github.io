@@ -30,8 +30,8 @@
       margin: 0 auto;
       padding: 140px 48px 100px;
       display: grid;
-      grid-template-columns: 1fr 180px 300px;
-      gap: 48px;
+      grid-template-columns: 1fr 340px;
+      gap: 80px;
       align-items: start;
     }
 
@@ -540,12 +540,12 @@
 
     .hero-character {
       display: block;
-      height: 180px;
-      width: 100%;
+      height: 160px;
+      width: auto;
+      margin: 0 auto 20px;
       object-fit: contain;
-      object-position: center;
       mix-blend-mode: multiply;
-      align-self: center;
+      border: none;
     }
 
     /* Responsive */
@@ -569,13 +569,11 @@
       .project-hero {
         grid-template-columns: 1fr;
         padding: 120px 24px 60px;
-        gap: 32px;
+        gap: 48px;
       }
 
       .hero-character {
-        height: 140px;
-        width: auto;
-        margin: 0 auto;
+        height: 120px;
       }
 
       .status-card {
@@ -610,11 +608,9 @@
           <p class="hero-body">Xiushan Flower Lantern is a traditional folk art from Chongqing, China — integrating dance, music, theater, craftsmanship, and folk belief. Despite being a national intangible cultural heritage, it struggles to reach the people who might care about it most.</p>
         </div>
 
-        <!-- Center: Character -->
-        <img src="character%20figure.JPG" alt="Xiushan Flower Lantern character" class="hero-character" />
-
-        <!-- Right: Status Card -->
+        <!-- Right: Character + Status Card -->
         <div class="hero-right">
+          <img src="character%20figure.JPG" alt="Xiushan Flower Lantern character" class="hero-character" />
           <div class="status-card">
             <p class="status-card-label">Status</p>
             <p class="status-card-main"><em>Completed</em> · 2024</p>
