@@ -457,29 +457,28 @@
 
     .outcome-rows {
       display: flex;
-      flex-direction: column;
-      gap: 10px;
+      flex-direction: row;
+      gap: 48px;
     }
 
     .outcome-row {
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 16px;
-      align-items: baseline;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
     }
 
     .outcome-row-number {
       font-family: 'Libre Baskerville', Georgia, serif;
-      font-size: 1.15rem;
+      font-size: clamp(3rem, 5vw, 4rem);
       font-weight: 700;
-      color: #2C2416;
-      line-height: 1.3;
+      color: #4a3728;
+      line-height: 1;
     }
 
     .outcome-row-label {
       font-family: 'PT Serif', Georgia, serif;
-      font-size: 14px;
-      color: #6B5B47;
+      font-size: 16px;
+      color: #8C7B6A;
       line-height: 1.6;
     }
 
@@ -498,9 +497,6 @@
         gap: 24px;
       }
 
-      .outcome-row {
-        grid-template-columns: 100px 1fr;
-      }
     }
 
     /* ── Problem Section ── */
