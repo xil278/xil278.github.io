@@ -64,21 +64,109 @@
       margin-bottom: 16px;
     }
 
+    /* ── Hero Statement ── */
+    .hero-statement {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 80px 48px 56px;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: clamp(2.2rem, 4.8vw, 3.4rem);
+      font-weight: 700;
+      color: #2C2416;
+      line-height: 1.22;
+      margin-bottom: 28px;
+    }
+
+    .impact-wrap {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .impact-circle {
+      position: absolute;
+      top: -0.22em;
+      left: -0.35em;
+      width: calc(100% + 0.7em);
+      height: calc(100% + 0.44em);
+      pointer-events: none;
+      overflow: visible;
+    }
+
+    .hero-subtitle {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: clamp(15px, 1.9vw, 19px);
+      color: #6B5B47;
+      line-height: 1.75;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* ── Nav Buttons ── */
+    .about-nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding: 8px 48px 80px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .about-nav-btn {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: #2C2416;
+      background: #EDE8DE;
+      border: 1.5px solid #2C2416;
+      border-radius: 12px;
+      padding: 13px 32px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .about-nav-btn:hover {
+      background: #2C2416;
+      color: #F5F0E8;
+    }
+
     @media (max-width: 900px) {
+      .hero-statement {
+        padding: 60px 24px 40px;
+      }
       .about-hero {
         grid-template-columns: 1fr;
-        padding: 60px 24px 40px;
+        padding: 40px 24px 40px;
         gap: 48px;
       }
       .photo-card {
         max-width: 320px;
         margin: 0 auto;
       }
+      .about-nav-buttons {
+        padding: 8px 24px 60px;
+      }
     }
 
     @media (max-width: 600px) {
       .about-text h1 {
         font-size: 3rem;
+      }
+      .about-nav-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      .about-nav-btn {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
       }
     }
   </style>
@@ -96,6 +184,21 @@
   </nav>
 
   <main class="page">
+
+    <section class="hero-statement">
+      <h2 class="hero-title">
+        Let's Make an
+        <span class="impact-wrap">Impact
+          <svg class="impact-circle" viewBox="0 0 210 82" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16,41 C13,19 50,3 105,5 C160,7 197,21 195,41 C193,63 157,79 105,77 C53,75 9,63 16,41"
+                  stroke="#2C2416" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+          </svg>
+        </span>
+        For This World
+      </h2>
+      <p class="hero-subtitle">I believe design can change how we see the world — and I want to create experiences that actually matter</p>
+    </section>
+
     <section class="about-hero">
       <div class="about-text">
         <h1>Hi, this is Xinyi(Berenic) Liu</h1>
@@ -115,6 +218,13 @@
         </div>
       </div>
     </section>
+
+    <div class="about-nav-buttons">
+      <a href="resume.html" class="about-nav-btn">Resume</a>
+      <a href="project.html" class="about-nav-btn">Project</a>
+      <a href="contact.html" class="about-nav-btn">Contact Me</a>
+    </div>
+
   </main>
 
   <footer>
