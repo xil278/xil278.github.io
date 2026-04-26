@@ -1340,6 +1340,42 @@
     lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 
+    // Outcome number count-up animation
+    (function () {
+      const numberEls = document.querySelectorAll('.outcome-row-number');
+      if (!numberEls.length) return;
+
+      function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+      function animateCount(el, target, suffix) {
+        const start = performance.now();
+        function tick(now) {
+          const t = Math.min((now - start) / 1500, 1);
+          el.textContent = Math.round(easeOut(t) * target).toLocaleString('en-US') + suffix;
+          if (t < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+
+      const outcomeSection = document.querySelector('.outcome-section');
+      if (!outcomeSection) return;
+
+      const observer = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+          numberEls.forEach(el => {
+            const text = el.textContent.trim();
+            const suffix = text.endsWith('+') ? '+' : '';
+            const target = parseInt(text.replace(/[^0-9]/g, ''), 10);
+            el.textContent = '0' + suffix;
+            animateCount(el, target, suffix);
+          });
+          observer.unobserve(outcomeSection);
+        }
+      }, { threshold: 0.3 });
+
+      observer.observe(outcomeSection);
+    })();
+
     // Donut chart scroll animation
     (function () {
       const segments = document.querySelectorAll('.donut-segment');
