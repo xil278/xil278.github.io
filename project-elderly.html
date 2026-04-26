@@ -506,16 +506,17 @@
     /* ── Outcome Stats ── */
     .outcome-stats {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(4, 1fr);
       gap: 16px;
       margin-top: 24px;
     }
 
     .outcome-stat {
-      background: #EDE8DE;
+      background: #ffffff;
       border: 1px solid #DDD5C5;
       border-radius: 14px;
-      padding: 28px 24px;
+      padding: 28px 20px;
+      text-align: center;
     }
 
     .outcome-stat-number {
@@ -529,7 +530,7 @@
 
     .outcome-stat-label {
       font-family: 'PT Serif', Georgia, serif;
-      font-size: 14px;
+      font-size: 13px;
       color: #4A3C2C;
       line-height: 1.65;
     }
@@ -651,7 +652,7 @@
 
       .system-thinking { grid-template-columns: 1fr 1fr; }
 
-      .outcome-stats { grid-template-columns: 1fr; }
+      .outcome-stats { grid-template-columns: 1fr 1fr; }
 
       .back-row { padding: 0 24px 60px; }
     }
@@ -963,19 +964,19 @@
 
           <div class="outcome-stats">
             <div class="outcome-stat">
-              <p class="outcome-stat-number">226</p>
+              <p class="outcome-stat-number outcome-count">226</p>
               <p class="outcome-stat-label">subscribers — content platform reach</p>
             </div>
             <div class="outcome-stat">
-              <p class="outcome-stat-number">512</p>
+              <p class="outcome-stat-number outcome-count">512</p>
               <p class="outcome-stat-label">avg views per article, 8 articles published</p>
             </div>
             <div class="outcome-stat">
-              <p class="outcome-stat-number">11</p>
+              <p class="outcome-stat-number outcome-count">11</p>
               <p class="outcome-stat-label">users in usability testing — found system clear and easy to navigate</p>
             </div>
             <div class="outcome-stat">
-              <p class="outcome-stat-number">10</p>
+              <p class="outcome-stat-number outcome-count">10</p>
               <p class="outcome-stat-label">participants in play-based intervention — enhanced intergenerational communication</p>
             </div>
           </div>
@@ -1024,6 +1025,40 @@
     const toggle = document.getElementById('navToggle');
     const links = document.getElementById('navLinks');
     toggle.addEventListener('click', () => links.classList.toggle('open'));
+
+    // Outcome count-up animation
+    (function () {
+      const countEls = document.querySelectorAll('.outcome-count');
+      if (!countEls.length) return;
+
+      function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+      function animateCount(el, target) {
+        const start = performance.now();
+        function tick(now) {
+          const t = Math.min((now - start) / 1500, 1);
+          el.textContent = Math.round(easeOut(t) * target);
+          if (t < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+
+      const outcomeStats = document.querySelector('.outcome-stats');
+      if (!outcomeStats) return;
+
+      const observer = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+          countEls.forEach(el => {
+            const target = parseInt(el.textContent.trim(), 10);
+            el.textContent = '0';
+            animateCount(el, target);
+          });
+          observer.unobserve(outcomeStats);
+        }
+      }, { threshold: 0.4 });
+
+      observer.observe(outcomeStats);
+    })();
 
     // Method count-up animation
     (function () {
