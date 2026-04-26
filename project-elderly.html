@@ -427,6 +427,37 @@
       font-style: normal;
     }
 
+    /* ── Solution Goal Cards ── */
+    .goal-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 32px;
+      margin-bottom: 40px;
+    }
+
+    .goal-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #faf8f5;
+      border: 1px solid #DDD5C5;
+      border-radius: 12px;
+      padding: 16px 20px;
+    }
+
+    .goal-card-icon {
+      flex-shrink: 0;
+      color: #8B6F52;
+    }
+
+    .goal-card-text {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 15px;
+      color: #2C2416;
+      line-height: 1.4;
+    }
+
     /* ── Design Module Cards ── */
     .design-module-cards {
       display: grid;
@@ -614,6 +645,8 @@
       .insight-card { padding: 40px 28px; }
 
       .duality-sub-cards { flex-direction: column; }
+
+      .goal-cards { grid-template-columns: 1fr; }
 
       .design-module-cards { grid-template-columns: 1fr; }
 
@@ -831,6 +864,45 @@
         </div>
         <div>
           <p class="section-body">Rather than treating intergenerational caregiving as a problem to eliminate, this project reframes it as a system to support, balance, and sustain.</p>
+
+          <div class="goal-cards">
+            <div class="goal-card">
+              <span class="goal-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 21C12 21 4 14.5 4 9a8 8 0 0116 0c0 5.5-8 12-8 12z"/>
+                  <circle cx="12" cy="9" r="3"/>
+                </svg>
+              </span>
+              <span class="goal-card-text">Reducing physical and emotional burden</span>
+            </div>
+            <div class="goal-card">
+              <span class="goal-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 12h2l3-7 4 14 3-8 2 1h4"/>
+                </svg>
+              </span>
+              <span class="goal-card-text">Restoring personal space and autonomy</span>
+            </div>
+            <div class="goal-card">
+              <span class="goal-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+                </svg>
+              </span>
+              <span class="goal-card-text">Improving intergenerational communication</span>
+            </div>
+            <div class="goal-card">
+              <span class="goal-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="7" r="3"/>
+                  <path d="M5 20v-2a4 4 0 014-4h2"/>
+                  <circle cx="17" cy="7" r="3"/>
+                  <path d="M19 20v-2a4 4 0 00-4-4h-2"/>
+                </svg>
+              </span>
+              <span class="goal-card-text">Enabling shared participation in caregiving</span>
+            </div>
+          </div>
 
           <div class="design-module-cards">
             <div class="method-card">
