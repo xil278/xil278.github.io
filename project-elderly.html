@@ -476,28 +476,41 @@
       line-height: 1.5;
     }
 
-    /* ── Module card expand image ── */
+    /* ── Module card hover image ── */
     .design-module-cards .method-card {
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .module-img-panel {
-      max-height: 0;
+      position: relative;
       overflow: hidden;
-      transition: max-height 0.45s ease, margin-top 0.45s ease;
-      margin-top: 0;
     }
 
-    .module-img-panel.is-open {
-      max-height: 800px;
-      margin-top: 16px;
+    .card-text-wrap {
+      transition: opacity 0.4s ease;
     }
 
-    .module-img-panel img {
+    .design-module-cards .method-card:hover .card-text-wrap {
+      opacity: 0;
+    }
+
+    .module-hover-overlay {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      border-radius: 14px;
+      z-index: 1;
+      background: #EDE8DE;
+    }
+
+    .module-hover-overlay img {
       width: 100%;
-      border-radius: 8px;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 14px;
       display: block;
+    }
+
+    .design-module-cards .method-card:hover .module-hover-overlay {
+      opacity: 1;
     }
 
     /* ── System Thinking ── */
@@ -1050,16 +1063,23 @@
     const links = document.getElementById('navLinks');
     toggle.addEventListener('click', () => links.classList.toggle('open'));
 
-    // Design module card expand images
+    // Design module card hover images
     document.querySelectorAll('.design-module-cards .method-card[data-img]').forEach(card => {
-      const panel = document.createElement('div');
-      panel.className = 'module-img-panel';
+      // Wrap existing content so it can fade as a unit
+      const wrap = document.createElement('div');
+      wrap.className = 'card-text-wrap';
+      while (card.firstChild) wrap.appendChild(card.firstChild);
+      card.appendChild(wrap);
+
+      // Inject hover overlay
+      const overlay = document.createElement('div');
+      overlay.className = 'module-hover-overlay';
       const img = document.createElement('img');
       img.src = card.dataset.img;
-      img.alt = card.querySelector('.method-card-title').textContent;
-      panel.appendChild(img);
-      card.appendChild(panel);
-      card.addEventListener('click', () => panel.classList.toggle('is-open'));
+      img.alt = card.querySelector('.method-card-title')
+        ? card.querySelector('.method-card-title').textContent : '';
+      overlay.appendChild(img);
+      card.appendChild(overlay);
     });
 
     // Outcome count-up animation
