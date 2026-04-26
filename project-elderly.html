@@ -20,39 +20,305 @@
       background-color: #F6F3EC;
     }
 
-    .coming-soon {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 180px 48px 120px;
-      text-align: center;
+    /* ── Hero ── */
+    .hero-wrapper {
+      background-color: #F0EBE1;
     }
 
-    .coming-soon-eyebrow {
+    .project-hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 140px 48px 100px;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .hero-tag {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #A89880;
+      margin-bottom: 28px;
+    }
+
+    .hero-heading {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      color: #2C2416;
+      line-height: 1.2;
+      margin-bottom: 28px;
+    }
+
+    .hero-subtitle {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: clamp(15px, 1.7vw, 18px);
+      color: #4A3C2C;
+      line-height: 1.65;
+      margin-bottom: 20px;
+      max-width: 520px;
+    }
+
+    .hero-body {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 15px;
+      color: #6B5B47;
+      line-height: 1.85;
+      max-width: 520px;
+    }
+
+    /* Right status card */
+    .status-card {
+      background: #EDE8DE;
+      border: 1px solid #DDD5C5;
+      border-radius: 16px;
+      padding: 32px 28px;
+      position: sticky;
+      top: 120px;
+    }
+
+    .status-card-label {
       font-family: 'Bitter', Georgia, serif;
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: #A89880;
-      margin-bottom: 20px;
+      margin-bottom: 14px;
     }
 
-    .coming-soon h1 {
-      font-family: 'Libre Baskerville', Georgia, serif;
-      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
-      font-weight: 400;
-      font-style: italic;
+    .status-card-main {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 15px;
       color: #2C2416;
-      line-height: 1.3;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .status-card-tags {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 13px;
+      color: #8C7B6A;
+      line-height: 1.85;
+      border-top: 1px solid #DDD5C5;
+      padding-top: 16px;
+    }
+
+    /* ── Content wrapper ── */
+    .content-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    /* ── Two-col section (label left, content right) ── */
+    .research-section {
+      padding: 72px 0;
+      border-top: 1px solid #DDD5C5;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .research-left-label {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #A89880;
+      margin-bottom: 12px;
+    }
+
+    .research-left-subtitle {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: clamp(1rem, 1.6vw, 1.25rem);
+      font-weight: 400;
+      color: #2C2416;
+      line-height: 1.45;
+    }
+
+    .section-body {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 15px;
+      color: #6B5B47;
+      line-height: 1.9;
+    }
+
+    .section-body p + p {
+      margin-top: 16px;
+    }
+
+    /* Focus list */
+    .focus-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .focus-list li {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 15px;
+      color: #4A3C2C;
+      line-height: 1.7;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .focus-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: #C4A882;
+    }
+
+    /* Method cards */
+    .method-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .method-card {
+      background: #EDE8DE;
+      border: 1px solid #DDD5C5;
+      border-radius: 14px;
+      padding: 28px 24px;
+    }
+
+    .method-card-title {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #A89880;
+      margin-bottom: 12px;
+    }
+
+    .method-card-body {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 14px;
+      color: #4A3C2C;
+      line-height: 1.75;
+    }
+
+    .method-card-num {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #C4A882;
+      margin-bottom: 6px;
+    }
+
+    /* ── Findings numbered list ── */
+    .findings-section {
+      padding: 72px 0;
+      border-top: 1px solid #DDD5C5;
+    }
+
+    .findings-header {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 64px;
+      margin-bottom: 48px;
+    }
+
+    .research-items {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .research-item {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 24px;
+      align-items: start;
+      padding: 32px 0;
+      border-top: 1px solid #DDD5C5;
+    }
+
+    .research-item:first-child { border-top: none; }
+
+    .research-num {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: #C4A882;
+      letter-spacing: 0.08em;
+      padding-top: 4px;
+    }
+
+    .research-item-title {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: #2C2416;
+      margin-bottom: 10px;
+    }
+
+    .research-item-body {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 15px;
+      color: #6B5B47;
+      line-height: 1.85;
+    }
+
+    .research-item-body em {
+      color: #4A3C2C;
+      font-style: italic;
+    }
+
+    /* ── Insight block ── */
+    .insight-section {
+      padding: 72px 0 100px;
+      border-top: 1px solid #DDD5C5;
+    }
+
+    .insight-card {
+      background: #2C2416;
+      border-radius: 20px;
+      padding: 56px 64px;
+    }
+
+    .insight-eyebrow {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #C4A882;
       margin-bottom: 24px;
     }
 
-    .coming-soon p {
-      font-family: 'PT Serif', Georgia, serif;
-      font-size: 16px;
-      color: #6B5B47;
-      line-height: 1.8;
-      margin-bottom: 40px;
+    .insight-text {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-style: italic;
+      color: #F6F3EC;
+      line-height: 1.65;
+      max-width: 760px;
+    }
+
+    .insight-text em {
+      color: #C4A882;
+      font-style: normal;
+    }
+
+    /* ── Back link ── */
+    .back-row {
+      padding: 0 48px 80px;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     .back-link {
@@ -72,6 +338,30 @@
       color: #2C2416;
       border-color: #2C2416;
     }
+
+    @media (max-width: 900px) {
+      .project-hero {
+        grid-template-columns: 1fr;
+        padding: 120px 24px 60px;
+        gap: 40px;
+      }
+
+      .status-card { position: static; }
+
+      .research-section,
+      .findings-header {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .content-wrapper { padding: 0 24px; }
+
+      .method-cards { grid-template-columns: 1fr; }
+
+      .insight-card { padding: 40px 28px; }
+
+      .back-row { padding: 0 24px 60px; }
+    }
   </style>
 </head>
 <body>
@@ -88,12 +378,142 @@
   </nav>
 
   <main>
-    <div class="coming-soon">
-      <p class="coming-soon-eyebrow">📁 Research · 2022–2023</p>
-      <h1>Intergenerational Care &amp; Elderly Well-being Research Project</h1>
-      <p>Investigating skip-generation child-rearing impacts on elderly health in urban China through mixed-methods research, with intervention design including a content platform and mini program.</p>
+
+    <!-- Hero -->
+    <div class="hero-wrapper">
+      <div class="project-hero">
+        <div>
+          <p class="hero-tag">📁 Research · 2022–2023</p>
+          <h1 class="hero-heading">Intergenerational Care &amp; Elderly Well-being Research Project</h1>
+          <p class="hero-subtitle">Who holds the family together — and at what cost?</p>
+          <p class="hero-body">In rapidly urbanizing cities, childcare is increasingly shifting across generations. Grandparents are no longer occasional helpers — they have become primary caregivers. Over 50% of elderly individuals in China are involved in raising grandchildren. Yet most discussions focus on children and parents. The elderly are rarely centered in this system.</p>
+        </div>
+        <div class="status-card">
+          <p class="status-card-label">Project Info</p>
+          <p class="status-card-main">Mixed-methods research on skip-generation caregiving in urban China, centering the elderly experience.</p>
+          <div class="status-card-tags">
+            <p>📍 Chongqing, China</p>
+            <p>🗓 2022–2023</p>
+            <p>👥 39 interviews</p>
+            <p>📚 12 academic sources</p>
+            <p>🏷 Social Research · UX Design · Community Care</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Focus -->
+    <div class="content-wrapper">
+      <div class="research-section">
+        <div>
+          <p class="research-left-label">Focus</p>
+          <p class="research-left-subtitle">What this research explores</p>
+        </div>
+        <div class="section-body">
+          <p>This research centers on the elderly as the often-invisible backbone of urban family life — examining how the caregiving role reshapes their lives across three dimensions.</p>
+          <ul class="focus-list">
+            <li>How caregiving reshapes elderly bodies and health</li>
+            <li>How it influences mental states and emotional well-being</li>
+            <li>How family dynamics and generational gaps create tension</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Method -->
+      <div class="research-section">
+        <div>
+          <p class="research-left-label">Method</p>
+          <p class="research-left-subtitle">Grounded in data and lived experience</p>
+        </div>
+        <div>
+          <p class="section-body">A mixed-method approach combining systematic literature review with in-depth field interviews — grounding insights in both academic evidence and the texture of real lives.</p>
+          <div class="method-cards">
+            <div class="method-card">
+              <p class="method-card-num">12</p>
+              <p class="method-card-title">Literature Review</p>
+              <p class="method-card-body">Academic sources spanning sociology, gerontology, and public health — mapping the structural forces behind skip-generation caregiving.</p>
+            </div>
+            <div class="method-card">
+              <p class="method-card-num">39</p>
+              <p class="method-card-title">Field Interviews</p>
+              <p class="method-card-body">Elderly caregivers and young parents in Chongqing — conversations about daily routines, emotional states, family tensions, and sense of self.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Findings -->
+    <div class="content-wrapper">
+      <div class="findings-section">
+        <div class="findings-header">
+          <div>
+            <p class="research-left-label">What We Found</p>
+            <p class="research-left-subtitle">Five patterns across all interviews</p>
+          </div>
+          <p class="section-body">Across 39 conversations, five consistent themes emerged — each pointing to a different dimension of how caregiving restructures elderly lives.</p>
+        </div>
+
+        <div class="research-items">
+          <div class="research-item">
+            <span class="research-num">01</span>
+            <div>
+              <p class="research-item-title">A System, Not a Choice</p>
+              <p class="research-item-body">Caregiving is driven by structure, not preference: work pressure on young parents, lack of accessible childcare, cultural expectations of family responsibility. Grandparenting becomes <em>inevitable infrastructure</em> — something entered into without real alternative.</p>
+            </div>
+          </div>
+
+          <div class="research-item">
+            <span class="research-num">02</span>
+            <div>
+              <p class="research-item-title">Physical Cost</p>
+              <p class="research-item-body">Caregiving is labor-intensive: continuous supervision, repetitive physical strain, long-term health risks. Aging bodies are pushed into high-intensity care work — a sustained demand that accumulates over months and years.</p>
+            </div>
+          </div>
+
+          <div class="research-item">
+            <span class="research-num">03</span>
+            <div>
+              <p class="research-item-title">Emotional Duality</p>
+              <p class="research-item-body"><em>Rewarding:</em> sense of purpose, emotional fulfillment, family belonging.<br/>
+              <em>Exhausting:</em> stress and fatigue, loss of personal time, ongoing responsibility.<br/>
+              A condition of being "tired, but needed" — held together by love and obligation at once.</p>
+            </div>
+          </div>
+
+          <div class="research-item">
+            <span class="research-num">04</span>
+            <div>
+              <p class="research-item-title">Disappearing Self</p>
+              <p class="research-item-body">Social lives shrink, hobbies disappear, daily routines revolve entirely around children. Caregiving leads to a gradual loss of personal identity — a slow erosion rather than a single break.</p>
+            </div>
+          </div>
+
+          <div class="research-item">
+            <span class="research-num">05</span>
+            <div>
+              <p class="research-item-title">Invisible Tension</p>
+              <p class="research-item-body">Intergenerational differences create friction: conflicting parenting styles, communication gaps, subtle but persistent conflicts. Often minimized by both sides — but emotionally accumulative, and rarely resolved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Insight -->
+    <div class="content-wrapper">
+      <div class="insight-section">
+        <div class="insight-card">
+          <p class="insight-eyebrow">Core Insight</p>
+          <p class="insight-text">Intergenerational caregiving is not just a family choice. It is a <em>hidden support system</em> sustaining urban life. But within this system — the people who hold it together are also the ones most overlooked.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="back-row">
       <a href="index.html#projectSection" class="back-link">← Back to Projects</a>
     </div>
+
   </main>
 
   <footer>
