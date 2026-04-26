@@ -294,6 +294,108 @@
       font-style: italic;
     }
 
+    /* ── Finding Cards ── */
+    .finding-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .finding-card {
+      background: #ffffff;
+      border: 1px solid #DDD5C5;
+      border-radius: 16px;
+      padding: 28px 28px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .finding-num-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #2C2416;
+      color: #F6F3EC;
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .finding-title {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #2C2416;
+      margin-bottom: 10px;
+    }
+
+    .finding-body {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 15px;
+      color: #6B5B47;
+      line-height: 1.85;
+    }
+
+    .duality-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .duality-col-label {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .duality-col-label.rewarding  { color: #C4A882; }
+    .duality-col-label.exhausting { color: #8a7060; }
+
+    .duality-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .duality-list li {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 14px;
+      color: #6B5B47;
+      line-height: 1.6;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .duality-list li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: #C4A882;
+    }
+
+    .duality-quote {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 14px;
+      font-style: italic;
+      color: #4A3C2C;
+      line-height: 1.75;
+      padding-top: 12px;
+      border-top: 1px solid #DDD5C5;
+    }
+
     /* ── Insight block ── */
     .insight-section {
       padding: 72px 0 100px;
@@ -516,6 +618,8 @@
 
       .insight-card { padding: 40px 28px; }
 
+      .duality-cols { grid-template-columns: 1fr; }
+
       .design-module-cards { grid-template-columns: 1fr; }
 
       .system-thinking { grid-template-columns: 1fr 1fr; }
@@ -649,48 +753,66 @@
           <p class="section-body">Across 39 conversations, five consistent themes emerged — each pointing to a different dimension of how caregiving restructures elderly lives.</p>
         </div>
 
-        <div class="research-items">
-          <div class="research-item">
-            <span class="research-num">01</span>
+        <div class="finding-cards">
+
+          <div class="finding-card">
+            <div class="finding-num-badge">01</div>
             <div>
-              <p class="research-item-title">A System, Not a Choice</p>
-              <p class="research-item-body">Caregiving is driven by structure, not preference: work pressure on young parents, lack of accessible childcare, cultural expectations of family responsibility. Grandparenting becomes <em>inevitable infrastructure</em> — something entered into without real alternative.</p>
+              <p class="finding-title">A System, Not a Choice</p>
+              <p class="finding-body">Caregiving is driven by structure, not preference: work pressure on young parents, lack of accessible childcare, cultural expectations of family responsibility. Grandparenting becomes <em>inevitable infrastructure</em> — something entered into without real alternative.</p>
             </div>
           </div>
 
-          <div class="research-item">
-            <span class="research-num">02</span>
+          <div class="finding-card">
+            <div class="finding-num-badge">02</div>
             <div>
-              <p class="research-item-title">Physical Cost</p>
-              <p class="research-item-body">Caregiving is labor-intensive: continuous supervision, repetitive physical strain, long-term health risks. Aging bodies are pushed into high-intensity care work — a sustained demand that accumulates over months and years.</p>
+              <p class="finding-title">Physical Cost</p>
+              <p class="finding-body">Caregiving is labor-intensive: continuous supervision, repetitive physical strain, long-term health risks. Aging bodies are pushed into high-intensity care work — a sustained demand that accumulates over months and years.</p>
             </div>
           </div>
 
-          <div class="research-item">
-            <span class="research-num">03</span>
-            <div>
-              <p class="research-item-title">Emotional Duality</p>
-              <p class="research-item-body"><em>Rewarding:</em> sense of purpose, emotional fulfillment, family belonging.<br/>
-              <em>Exhausting:</em> stress and fatigue, loss of personal time, ongoing responsibility.<br/>
-              A condition of being "tired, but needed" — held together by love and obligation at once.</p>
+          <div class="finding-card">
+            <div class="finding-num-badge">03</div>
+            <div style="flex:1">
+              <p class="finding-title">Emotional Duality</p>
+              <div class="duality-cols">
+                <div>
+                  <p class="duality-col-label rewarding">Rewarding</p>
+                  <ul class="duality-list">
+                    <li>Sense of purpose</li>
+                    <li>Emotional fulfillment</li>
+                    <li>Family belonging</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="duality-col-label exhausting">Exhausting</p>
+                  <ul class="duality-list">
+                    <li>Stress and fatigue</li>
+                    <li>Loss of personal time</li>
+                    <li>Ongoing responsibility</li>
+                  </ul>
+                </div>
+              </div>
+              <p class="duality-quote">A condition of being "tired, but needed" — held together by love and obligation at once.</p>
             </div>
           </div>
 
-          <div class="research-item">
-            <span class="research-num">04</span>
+          <div class="finding-card">
+            <div class="finding-num-badge">04</div>
             <div>
-              <p class="research-item-title">Disappearing Self</p>
-              <p class="research-item-body">Social lives shrink, hobbies disappear, daily routines revolve entirely around children. Caregiving leads to a gradual loss of personal identity — a slow erosion rather than a single break.</p>
+              <p class="finding-title">Disappearing Self</p>
+              <p class="finding-body">Social lives shrink, hobbies disappear, daily routines revolve entirely around children. Caregiving leads to a gradual loss of personal identity — a slow erosion rather than a single break.</p>
             </div>
           </div>
 
-          <div class="research-item">
-            <span class="research-num">05</span>
+          <div class="finding-card">
+            <div class="finding-num-badge">05</div>
             <div>
-              <p class="research-item-title">Invisible Tension</p>
-              <p class="research-item-body">Intergenerational differences create friction: conflicting parenting styles, communication gaps, subtle but persistent conflicts. Often minimized by both sides — but emotionally accumulative, and rarely resolved.</p>
+              <p class="finding-title">Invisible Tension</p>
+              <p class="finding-body">Intergenerational differences create friction: conflicting parenting styles, communication gaps, subtle but persistent conflicts. Often minimized by both sides — but emotionally accumulative, and rarely resolved.</p>
             </div>
           </div>
+
         </div>
       </div>
     </div>
