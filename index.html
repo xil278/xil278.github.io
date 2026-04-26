@@ -563,6 +563,13 @@
       transform: rotateY(180deg);
     }
 
+    .project-section .card-wrapper--static {
+      cursor: default;
+    }
+    .project-section .card-wrapper--static .card-inner {
+      transform: none !important;
+    }
+
     .project-section .card-front,
     .project-section .card-back {
       position: absolute;
@@ -579,11 +586,7 @@
       background-position: center;
     }
 
-    .project-section .card-front--behavioral {
-      background-image: url('attention photo.png');
-    }
-
-    .project-section .card-front::after {
+.project-section .card-front::after {
       content: '';
       position: absolute;
       inset: 0;
@@ -1326,15 +1329,11 @@
 
       <div class="cards-grid">
 
-        <a class="card-wrapper">
+        <a class="card-wrapper card-wrapper--static">
           <div class="card-inner">
-            <div class="card-front card-front--behavioral">
-              <span class="card-badge">📁 Research</span>
+            <div class="card-front">
+              <span class="card-badge">🚧 IN PROGRESS</span>
               <p class="card-front-title">Behavioral Attention Analytics</p>
-              <span class="card-front-hint">hover to explore →</span>
-            </div>
-            <div class="card-back">
-              <p class="card-back-title">Work in Progress</p>
             </div>
           </div>
         </a>
