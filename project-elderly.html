@@ -342,11 +342,25 @@
       line-height: 1.85;
     }
 
-    .duality-cols {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
+    .duality-intro {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 14px;
+      font-style: italic;
+      color: #4A3C2C;
+      line-height: 1.75;
       margin-bottom: 14px;
+    }
+
+    .duality-sub-cards {
+      display: flex;
+      gap: 12px;
+    }
+
+    .duality-sub-card {
+      flex: 1;
+      background: #f0ece6;
+      border-radius: 12px;
+      padding: 16px 18px;
     }
 
     .duality-col-label {
@@ -362,8 +376,8 @@
     .duality-col-label.exhausting { color: #8a7060; }
 
     .duality-list {
-      list-style: none;
-      padding: 0;
+      list-style: disc;
+      padding-left: 16px;
       margin: 0;
       display: flex;
       flex-direction: column;
@@ -375,25 +389,6 @@
       font-size: 14px;
       color: #6B5B47;
       line-height: 1.6;
-      padding-left: 14px;
-      position: relative;
-    }
-
-    .duality-list li::before {
-      content: '·';
-      position: absolute;
-      left: 0;
-      color: #C4A882;
-    }
-
-    .duality-quote {
-      font-family: 'PT Serif', Georgia, serif;
-      font-size: 14px;
-      font-style: italic;
-      color: #4A3C2C;
-      line-height: 1.75;
-      padding-top: 12px;
-      border-top: 1px solid #DDD5C5;
     }
 
     /* ── Insight block ── */
@@ -618,7 +613,7 @@
 
       .insight-card { padding: 40px 28px; }
 
-      .duality-cols { grid-template-columns: 1fr; }
+      .duality-sub-cards { flex-direction: column; }
 
       .design-module-cards { grid-template-columns: 1fr; }
 
@@ -775,8 +770,9 @@
             <div class="finding-num-badge">03</div>
             <div style="flex:1">
               <p class="finding-title">Emotional Duality</p>
-              <div class="duality-cols">
-                <div>
+              <p class="duality-intro">A condition of being "tired, but needed" — held together by love and obligation at once.</p>
+              <div class="duality-sub-cards">
+                <div class="duality-sub-card">
                   <p class="duality-col-label rewarding">Rewarding</p>
                   <ul class="duality-list">
                     <li>Sense of purpose</li>
@@ -784,7 +780,7 @@
                     <li>Family belonging</li>
                   </ul>
                 </div>
-                <div>
+                <div class="duality-sub-card">
                   <p class="duality-col-label exhausting">Exhausting</p>
                   <ul class="duality-list">
                     <li>Stress and fatigue</li>
@@ -793,7 +789,6 @@
                   </ul>
                 </div>
               </div>
-              <p class="duality-quote">A condition of being "tired, but needed" — held together by love and obligation at once.</p>
             </div>
           </div>
 
