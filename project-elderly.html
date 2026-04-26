@@ -318,6 +318,99 @@
       font-style: normal;
     }
 
+    /* ── Design Module Cards ── */
+    .design-module-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .module-arrow {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 13px;
+      font-style: italic;
+      color: #8a7060;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid #DDD5C5;
+      line-height: 1.5;
+    }
+
+    /* ── System Thinking ── */
+    .system-thinking {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+      padding: 22px 24px;
+      background: #EDE8DE;
+      border: 1px solid #DDD5C5;
+      border-radius: 14px;
+    }
+
+    .system-col-key {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #2C2416;
+      margin-bottom: 5px;
+    }
+
+    .system-col-val {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 13px;
+      color: #8C7B6A;
+      line-height: 1.5;
+    }
+
+    /* ── Outcome Stats ── */
+    .outcome-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .outcome-stat {
+      background: #EDE8DE;
+      border: 1px solid #DDD5C5;
+      border-radius: 14px;
+      padding: 28px 24px;
+    }
+
+    .outcome-stat-number {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #C4A882;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .outcome-stat-label {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 14px;
+      color: #4A3C2C;
+      line-height: 1.65;
+    }
+
+    .outcome-reflection {
+      margin-top: 28px;
+      padding: 28px 32px;
+      border-left: 3px solid #C4A882;
+      background: #EDE8DE;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .outcome-reflection-text {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 15px;
+      font-style: italic;
+      color: #4A3C2C;
+      line-height: 1.85;
+    }
+
     /* ── Back link ── */
     .back-row {
       padding: 0 48px 80px;
@@ -363,6 +456,12 @@
       .method-cards { grid-template-columns: 1fr; }
 
       .insight-card { padding: 40px 28px; }
+
+      .design-module-cards { grid-template-columns: 1fr; }
+
+      .system-thinking { grid-template-columns: 1fr 1fr; }
+
+      .outcome-stats { grid-template-columns: 1fr; }
 
       .back-row { padding: 0 24px 60px; }
     }
@@ -509,6 +608,106 @@
         <div class="insight-card">
           <p class="insight-eyebrow">Core Insight</p>
           <p class="insight-text">Intergenerational caregiving is not just a family choice. It is a <em>hidden support system</em> sustaining urban life. But within this system — the people who hold it together are also the ones most overlooked.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Solution -->
+    <div class="content-wrapper">
+      <div class="research-section">
+        <div>
+          <p class="research-left-label">Solution</p>
+          <p class="research-left-subtitle">Design Direction</p>
+        </div>
+        <div>
+          <p class="section-body">Rather than treating intergenerational caregiving as a problem to eliminate, this project reframes it as a system to support, balance, and sustain.</p>
+          <ul class="focus-list">
+            <li>Reducing physical and emotional burden</li>
+            <li>Restoring personal space and autonomy</li>
+            <li>Improving intergenerational communication</li>
+            <li>Enabling shared participation in caregiving</li>
+          </ul>
+
+          <div class="design-module-cards">
+            <div class="method-card">
+              <p class="method-card-num">01</p>
+              <p class="method-card-title">Knowledge Platform</p>
+              <p class="method-card-body">A content-based system designed to bridge the generational knowledge gap. Translates modern parenting concepts into accessible formats for elderly users. Reduces conflicts caused by misaligned caregiving beliefs. Content delivered through text + audio.</p>
+              <p class="module-arrow">→ Supporting caregivers without increasing cognitive load</p>
+            </div>
+            <div class="method-card">
+              <p class="method-card-num">02</p>
+              <p class="method-card-title">Daily Support Tool</p>
+              <p class="method-card-body">A lightweight digital system integrated into daily caregiving routines. Structures information into clear modules. Encourages rest and self-awareness. Reduces mental fatigue through simplified interaction design.</p>
+              <p class="module-arrow">→ Transforming caregiving from constant pressure into a manageable rhythm</p>
+            </div>
+            <div class="method-card">
+              <p class="method-card-num">03</p>
+              <p class="method-card-title">Social Layer</p>
+              <p class="method-card-body">A shared space for elderly caregivers to reconnect socially. Enables peer-to-peer experience sharing. Provides a channel for emotional expression. Rebuilds a sense of community and belonging.</p>
+              <p class="module-arrow">→ Shifting caregiving from an isolated task to a collective experience</p>
+            </div>
+            <div class="method-card">
+              <p class="method-card-num">04</p>
+              <p class="method-card-title">Intergenerational Interaction</p>
+              <p class="method-card-body">A play-based system designed for both children and caregivers. Encourages co-participation instead of passive supervision. Combines learning, interaction, and entertainment.</p>
+              <p class="module-arrow">→ Turning caregiving into a collaborative and engaging process</p>
+            </div>
+          </div>
+
+          <div class="system-thinking">
+            <div>
+              <p class="system-col-key">Knowledge</p>
+              <p class="system-col-val">→ reduces misunderstanding</p>
+            </div>
+            <div>
+              <p class="system-col-key">Tools</p>
+              <p class="system-col-val">→ support daily behavior</p>
+            </div>
+            <div>
+              <p class="system-col-key">Community</p>
+              <p class="system-col-val">→ supports emotional well-being</p>
+            </div>
+            <div>
+              <p class="system-col-key">Interaction</p>
+              <p class="system-col-val">→ strengthens relationships</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Outcome -->
+    <div class="content-wrapper">
+      <div class="research-section" style="padding-bottom: 100px;">
+        <div>
+          <p class="research-left-label">Outcome</p>
+        </div>
+        <div>
+          <p class="section-body">Early-stage evaluation suggests positive impact across engagement, usability, and emotional experience.</p>
+
+          <div class="outcome-stats">
+            <div class="outcome-stat">
+              <p class="outcome-stat-number">226</p>
+              <p class="outcome-stat-label">subscribers — content platform reach</p>
+            </div>
+            <div class="outcome-stat">
+              <p class="outcome-stat-number">512</p>
+              <p class="outcome-stat-label">avg views per article, 8 articles published</p>
+            </div>
+            <div class="outcome-stat">
+              <p class="outcome-stat-number">11</p>
+              <p class="outcome-stat-label">users in usability testing — found system clear and easy to navigate</p>
+            </div>
+            <div class="outcome-stat">
+              <p class="outcome-stat-number">10</p>
+              <p class="outcome-stat-label">participants in play-based intervention — enhanced intergenerational communication</p>
+            </div>
+          </div>
+
+          <div class="outcome-reflection">
+            <p class="outcome-reflection-text">"While the sample size is limited and findings are exploratory, the project demonstrates how design interventions can meaningfully support overlooked caregivers. Supporting caregiving is not about efficiency — it is about restoring balance in a system where care has become invisible."</p>
+          </div>
         </div>
       </div>
     </div>
